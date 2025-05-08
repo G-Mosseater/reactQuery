@@ -1,21 +1,23 @@
-import { useState } from 'react';
-
-interface Task {
-  id: number;
-  title: string;
-}
+import { useContext, useReducer, useState } from "react";
+import taskReducer from "./reducers/taskReducer";
+import TaskContext from "./contexts/taskContext";
+import AuthContext from "./contexts/authContext";
 
 const TaskList = () => {
-  const [tasks, setTasks] = useState<Task[]>([]);
-
+  // const [tasks, setTasks] = useState<Task[]>([]);
+  const { tasks, dispatch } = useContext(TaskContext);
+  const { user } = useContext(AuthContext);
   return (
-    <>
+    <><p>User:{user}</p>
       <button
         onClick={() =>
-          setTasks([
-            { id: Date.now(), title: 'Task ' + Date.now() },
-            ...tasks,
-          ])
+          dispatch({
+            type: "ADD",
+            task: {
+              id: Date.now(),
+              title: "Task " + Date.now(),
+            },
+          })
         }
         className="btn btn-primary my-3"
       >
@@ -31,7 +33,10 @@ const TaskList = () => {
             <button
               className="btn btn-outline-danger"
               onClick={() =>
-                setTasks(tasks.filter((t) => t.id !== task.id))
+                dispatch({
+                  type: "DELETE",
+                  taskId: task.id,
+                })
               }
             >
               Delete
