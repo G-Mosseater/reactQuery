@@ -14,22 +14,18 @@ import HomePage from "./state-management/HomePage";
 // import AuthContext from "./state-management/contexts/authContext";
 import AuthProvider from "./state-management/auth/AuthProvider";
 import { TaskProvider } from "./state-management/tasks";
+import Counter from "./state-management/counter/Counter";
 
 function App() {
-
-
-
-  
-
-
   return (
     <>
-      <AuthProvider  >
-      <TaskProvider>
-      <NavBar/>
-      <HomePage/>
-      </TaskProvider>
-      </AuthProvider >
+      <AuthProvider>
+        <TaskProvider>
+          <Counter></Counter>
+          <NavBar />
+          <HomePage />
+        </TaskProvider>
+      </AuthProvider>
     </>
   );
 }
