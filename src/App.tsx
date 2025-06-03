@@ -12,24 +12,24 @@ import NavBar from "./state-management/NavBar";
 import HomePage from "./state-management/HomePage";
 import authReducer from "./state-management/reducers/authReducer";
 import AuthContext from "./state-management/contexts/authContext";
+import AuthProvider from "./state-management/AuthProvider";
+import TaskProvider from "./state-management/TaskProvider";
 
 function App() {
 
-  const [tasks, taskDispatch] = useReducer(taskReducer, []);
 
-  const [user, authDispatch] = useReducer(authReducer,'');
 
   
 
 
   return (
     <>
-      <AuthContext.Provider  value={{user, dispatch: authDispatch}}>
-      <TaskContext.Provider value = {{tasks, dispatch:taskDispatch}}>
+      <AuthProvider  >
+      <TaskProvider>
       <NavBar/>
       <HomePage/>
-      </TaskContext.Provider>
-      </AuthContext.Provider  >
+      </TaskProvider>
+      </AuthProvider >
     </>
   );
 }
