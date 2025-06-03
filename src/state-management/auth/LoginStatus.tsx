@@ -1,7 +1,7 @@
 import { useContext, useReducer, useState } from "react";
-import authReducer from "./reducers/authReducer";
-import AuthContext from "./contexts/authContext";
-import useAuth from "./hooks/useAuth";
+// import authReducer from "./auth/authReducer";
+// import AuthContext from "./contexts/authContext";
+import useAuth from "./useAuth";
 
 const LoginStatus = () => {
 

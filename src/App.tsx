@@ -3,17 +3,17 @@ import "./App.css";
 import PostList from "./react-query/PostList";
 import TodoForm from "./react-query/TodoForm";
 import TodoList from "./react-query/TodoList";
-import Counter from "./state-management/Counter";
-import LoginStatus from "./state-management/LoginStatus";
-import taskReducer from "./state-management/reducers/taskReducer";
-import TaskList from "./state-management/TaskList";
-import TaskContext from "./state-management/contexts/taskContext";
+// import Counter from "./state-management/Counter";
+import LoginStatus from "./state-management/auth/LoginStatus";
+// import taskReducer from "./state-management/tasks/taskReducer";
+import TaskList from "./state-management/tasks/TaskList";
+import TaskContext from "./state-management/tasks/taskContext";
 import NavBar from "./state-management/NavBar";
 import HomePage from "./state-management/HomePage";
-import authReducer from "./state-management/reducers/authReducer";
-import AuthContext from "./state-management/contexts/authContext";
-import AuthProvider from "./state-management/AuthProvider";
-import TaskProvider from "./state-management/TaskProvider";
+// import authReducer from "./state-management/auth/authReducer";
+// import AuthContext from "./state-management/contexts/authContext";
+import AuthProvider from "./state-management/auth/AuthProvider";
+import { TaskProvider } from "./state-management/tasks";
 
 function App() {
 
